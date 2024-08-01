@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* Couleur du texte pour le thème sombre */
+  --background-start-rgb: 30, 30, 30; /* Couleur de fond de début pour le thème sombre */
+  --background-end-rgb: 50, 50, 50; /* Couleur de fond de fin pour le thème sombre */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0; /* Couleur du texte pour le thème clair */
+    --background-start-rgb: 214, 219, 220; /* Couleur de fond de début pour le thème clair */
+    --background-end-rgb: 255, 255, 255; /* Couleur de fond de fin pour le thème clair */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
